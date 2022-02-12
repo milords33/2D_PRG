@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ca5dbc8c5977e4ea1830c2434afed2, type: 3}
+  m_Name: SpecializationConfigsStorage
+  m_EditorClassIdentifier: 
+  _specializationConfigs:
+  - _specializationType: 1
+    _specializationName: Warrior
+    _specializationIcon: {fileID: 21300000, guid: 8b3a30b86c0bda44ba6d101f45b2664c, type: 3}
+    _specializationDescription: Warriors are true fighters and expert at melee combat.
+      Preferring to mix offensive power with defensive ability, warriors prefer to
+      use a good sword or axe with a shield and shrug off attacks with heavy armor.
+      Warriors do  not tire easily and are capable of repairing their own gear
+    _startStats:
+    - _statType: 1
+      _amount: 3
+    - _statType: 2
+      _amount: 1
+    - _statType: 3
+      _amount: 0
+    _startSkills:
+    - _skillType: 1
+      _skillName: Bash
+      _skillDescription: The hero delivers a strong blow, incapacitating the enemy
+        for 0.7 milliseconds.
+      _skillSprite: {fileID: 21300000, guid: c890dd06d4a350946ab11e4778bf47d8, type: 3}
+    - _skillType: 2
+      _skillName: Shield Block
+      _skillDescription: Absorbs 30% of the damage dealt to you by the enemy
+      _skillSprite: {fileID: 21300000, guid: 8a96b38c76be79946a150249547b07bc, type: 3}
+  - _specializationType: 2
+    _specializationName: Assassin
+    _specializationIcon: {fileID: 21300000, guid: 07875a88a19b0dd468e774c2d0d42c5d, type: 3}
+    _specializationDescription: As long as there is light, there will always be shadows
+      for Assassins to hide in, waiting for the perfect moment to strike. They will
+      turn any fight into a dance of death, fatally poisoning those unlucky enough
+      to survive the onslaught. Never challenge an Assassin to a duel if you value
+      your life!
+    _startStats:
+    - _statType: 1
+      _amount: 1
+    - _statType: 2
+      _amount: 2
+    - _statType: 3
+      _amount: 1
+    _startSkills:
+    - _skillType: 3
+      _skillName: Shadow Strike
+      _skillDescription: Doubles the damage dealt by the hero if the hero attacks
+        an enemy from behind
+      _skillSprite: {fileID: 21300000, guid: 0e7966e8857d9da42bd7ac9668f85ce2, type: 3}
+    - _skillType: 4
+      _skillName: Poison
+      _skillDescription: Poisons an enemy, dealing periodic damage equal to 30% of
+        the hero's attack.
+      _skillSprite: {fileID: 21300000, guid: b123bdad4f47a734c80135e456f2d162, type: 3}
+    - _skillType: 5
+      _skillName: Rapid Strike
+      _skillDescription: Instantly deals 60% damage from the hero's attack to the
+        enemy.
+      _skillSprite: {fileID: 21300000, guid: 00fbb4588136cde4fbf9001df788bcfb, type: 3}
