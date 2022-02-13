@@ -7,6 +7,7 @@ namespace PlayerCreator.Specialization
         None,
         Warrior,
         Assassin,
+        Wanderer,
     }
 
 }

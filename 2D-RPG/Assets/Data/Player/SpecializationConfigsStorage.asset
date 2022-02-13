@@ -22,11 +22,11 @@ MonoBehaviour:
       Warriors do  not tire easily and are capable of repairing their own gear
     _startStats:
     - _statType: 1
-      _amount: 3
+      _amount: 4
     - _statType: 2
       _amount: 1
     - _statType: 3
-      _amount: 0
+      _amount: 1
     _startSkills:
     - _skillType: 1
       _skillName: Bash
@@ -49,9 +49,9 @@ MonoBehaviour:
     - _statType: 1
       _amount: 1
     - _statType: 2
-      _amount: 2
+      _amount: 3
     - _statType: 3
-      _amount: 1
+      _amount: 2
     _startSkills:
     - _skillType: 3
       _skillName: Shadow Strike
@@ -68,3 +68,28 @@ MonoBehaviour:
       _skillDescription: Instantly deals 60% damage from the hero's attack to the
         enemy.
       _skillSprite: {fileID: 21300000, guid: 00fbb4588136cde4fbf9001df788bcfb, type: 3}
+  - _specializationType: 3
+    _specializationName: Wanderer
+    _specializationIcon: {fileID: 21300000, guid: 9c1c6e9aeceea5b49b1b041906490e45, type: 3}
+    _specializationDescription: From an early age, he knew the taste of betrayal,
+      grief, loneliness. He wandered all over the world and went through many trials
+      that hardened him and prepared him for all the possible occasions in life.
+      Great character for a first game
+    _startStats:
+    - _statType: 1
+      _amount: 2
+    - _statType: 2
+      _amount: 2
+    - _statType: 3
+      _amount: 2
+    _startSkills:
+    - _skillType: 6
+      _skillName: Search Info
+      _skillDescription: Years of wandering have taught the character to bargain
+        50% more efficiently
+      _skillSprite: {fileID: 21300000, guid: ef9ba620c9e9604438f10369334feead, type: 3}
+    - _skillType: 7
+      _skillName: Fast Learner
+      _skillDescription: Over the years of wandering, what the hero did not learn.
+        Character gains 50% more experience
+      _skillSprite: {fileID: 21300000, guid: 0f182fb2863faa7449e020de33b77e68, type: 3}

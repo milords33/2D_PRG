@@ -23,12 +23,12 @@ namespace PlayerCreator
         {
             switch (feature)
             {
-                case AppearanceFeature.Beard: return _beard;
-                case AppearanceFeature.Hair:  return _hair;
-                case AppearanceFeature.Ears: return _ears;
+                case AppearanceFeature.Beard:    return _beard;
+                case AppearanceFeature.Hair:     return _hair;
+                case AppearanceFeature.Ears:     return _ears;
                 case AppearanceFeature.EyeBrows: return _eyeBrows;
-                case AppearanceFeature.Eyes: return _eyes;
-                case AppearanceFeature.Mouth: return _mouth;
+                case AppearanceFeature.Eyes:     return _eyes;
+                case AppearanceFeature.Mouth:    return _mouth;
                 default:
                     throw new System.NullReferenceException($"There is no spriteRenderer for features{feature.ToString()} ");
             }

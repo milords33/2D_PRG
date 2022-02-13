@@ -8,5 +8,7 @@
         ShadowStrike,
         PoisonousStrike,
         RapidStrike,
+        SearchInfo,
+        FastLearner,
     }
 }
