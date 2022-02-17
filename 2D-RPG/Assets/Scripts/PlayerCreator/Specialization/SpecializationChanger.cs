@@ -12,10 +12,11 @@ namespace PlayerCreator.Specialization
         [SerializeField] private SpecializationConfigsStorage _specializationConfigsStorage;
         private List<SkillView> _skillViews;
         private List<StatView> _statViews;
-        private int _currentIndex = 0;
+        private int _currentIndex;
         private ObjectPool _objectPool;
         private void Start()
         {
+            _currentIndex = 1;
             _skillViews = new List<SkillView>();
             _statViews = new List<StatView>();
             _objectPool = ObjectPool.Instance;
@@ -67,7 +68,7 @@ namespace PlayerCreator.Specialization
                 StatView statView = _objectPool.GetObject(_specializationView.StatView);
                 statView.transform.SetParent(_specializationView.StatContainer);
                 statView.transform.localScale = Vector3.one;
-                statView.StatAmount.text = stat.Amount.ToString();
+                statView.StatAmount.text = stat.Value.ToString();
                 statView.StatType.text = stat.StatType.ToString();
                 _statViews.Add(statView);
             }

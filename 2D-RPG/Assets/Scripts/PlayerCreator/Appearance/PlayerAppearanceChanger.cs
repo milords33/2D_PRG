@@ -6,7 +6,7 @@ using System.IO;
 using Serialization;
 using ObjectPooling;
 
-namespace PlayerCreator
+namespace PlayerCreator.Appearance
 { 
     public class PlayerAppearanceChanger : MonoBehaviour
     {

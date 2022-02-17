@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace PlayerCreator
+namespace PlayerCreator.Appearance
 {
     public class PlayerAppearanceView : MonoBehaviour
     {

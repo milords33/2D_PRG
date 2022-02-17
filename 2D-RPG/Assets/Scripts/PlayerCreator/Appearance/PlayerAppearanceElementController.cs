@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PlayerCreator
+namespace PlayerCreator.Appearance
 {
     public class PlayerAppearanceElementController
     {
