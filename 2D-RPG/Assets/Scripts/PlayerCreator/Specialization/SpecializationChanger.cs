@@ -1,8 +1,11 @@
 using ObjectPooling;
 using System.Collections;
 using System.Collections.Generic;
+using Serialization;
 using UnityEngine;
-
+using System.IO;
+using System;
+using GamePlay;
 
 namespace PlayerCreator.Specialization
 {
@@ -14,9 +17,14 @@ namespace PlayerCreator.Specialization
         private List<StatView> _statViews;
         private int _currentIndex;
         private ObjectPool _objectPool;
+
+        private string SavePathClassNumb => Path.Combine(Application.dataPath,
+            "Serialization/Player", "PlayerClassNumb.txt");
+        public string SavePathClassValue => Path.Combine(Application.dataPath, 
+            "Serialization/Player", "PlayerClassValue.txt");
         private void Start()
         {
-            _currentIndex = 1;
+            _currentIndex = (Serializator.Deserializate<Int32>(SavePathClassNumb));
             _skillViews = new List<SkillView>();
             _statViews = new List<StatView>();
             _objectPool = ObjectPool.Instance;
@@ -85,5 +93,20 @@ namespace PlayerCreator.Specialization
             }
         }
 
+        public void SaveData()
+        {
+            Serializator.Serializate(_currentIndex, SavePathClassNumb);
+
+            StatType statType = StatType.Strength;
+
+
+            Dictionary<StatType, int> characteristicsValue = new Dictionary<StatType, int>();
+            foreach (var element in _statViews)
+            {
+                characteristicsValue.Add(statType++, Convert.ToInt32(element.StatAmount.text));
+            }
+
+            Serializator.Serializate(characteristicsValue, SavePathClassValue);
+        }
     }
 }

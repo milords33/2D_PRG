@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Newtonsoft.Json;
 using System.IO;
 using Serialization;
 using ObjectPooling;
@@ -39,7 +38,8 @@ namespace PlayerCreator.Appearance
             }
         }
 
-        private void Destroy()
+        // private Destroy
+        public void SaveData()
         {
             Dictionary<AppearanceFeature, int> appearanceFeatures = new Dictionary<AppearanceFeature, int>();
             foreach (var element in _elementControllers)

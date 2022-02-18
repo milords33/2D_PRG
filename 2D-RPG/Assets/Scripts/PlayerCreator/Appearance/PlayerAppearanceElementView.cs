@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+using PlayerCreator.PanelController;
 
 namespace PlayerCreator.Appearance
 {
@@ -19,6 +20,7 @@ namespace PlayerCreator.Appearance
         public TMP_Text StyleHeader => _styleHeader;
         public Button LeftArrow => _leftArrow;
         public Button RightArrow => _rightArrow;
+
 
     }
 }

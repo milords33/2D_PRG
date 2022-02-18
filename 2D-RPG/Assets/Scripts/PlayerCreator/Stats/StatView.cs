@@ -71,7 +71,7 @@ namespace PlayerCreator.Stats
 
         }
 
-        private void ChangeStat(int statValue)
+        public void ChangeStat(int statValue)
         {
             _statValue.text = statValue.ToString();
             SetButtonsState(statValue);

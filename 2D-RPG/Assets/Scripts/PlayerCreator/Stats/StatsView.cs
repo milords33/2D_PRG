@@ -5,6 +5,10 @@ using UnityEngine;
 using TMPro;
 using GamePlay;
 
+using PlayerCreator.PanelController;
+using Serialization;
+using System.IO;
+
 namespace PlayerCreator.Stats
 {
     public class StatsView : MonoBehaviour
@@ -14,29 +18,34 @@ namespace PlayerCreator.Stats
 
         private int _freeStats;
         private List<StatViewData> _statViewsData;
+        private List<Stat> _stats;
+
+        private string SavePath => Path.Combine(Application.dataPath, "Serialization/Player", "PlayerClassValue.txt");
 
         private void Start()
         {
-            List<Stat> stats = new List<Stat>
-            { new Stat(StatType.Agility,2), new Stat(StatType.Intelligence, 1), new Stat(StatType.Strength, 1) };
+             LoadData();
             _statViewsData = new List<StatViewData>();
-            _freeStats = 10;
+            _freeStats = 5;
             _freeStatsText.text = $"Stats left: {_freeStats}";
-            for (int i = 0; i < stats.Count; i++)
+            for (int i = 0; i < _stats.Count; i++)
             {
                 if(i> _statViews.Count)
                 {
                     break;
                 }
-                _statViews[i].Initialize(stats[i].StatType.ToString());
+                _statViews[i].Initialize(_stats[i].StatType.ToString());
                 _statViews[i].OnStatViewDecreaseClicked += DecreaseStatValue;
                 _statViews[i].OnStatViewIncreaseClicked += IncreaseStatValue;
                 _statViews[i].OnStatViewValueClicked += ChangeStatValue;
-                _statViewsData.Add(new StatViewData(_statViews[i], stats[i], stats[i].Value));
+                _statViewsData.Add(new StatViewData(_statViews[i], _stats[i], _stats[i].Value));
             }
             UpdateStatViews();
         }
-
+        private void Update()
+        {
+            Debug.Log(_statViews.Count);
+        }
         public void ChangeFreeStats(int value)
         {
             _freeStats += value;
@@ -85,6 +94,27 @@ namespace PlayerCreator.Stats
                 int value = statViewData.Stat.Value;
                 statViewData.StatView.UpdateView(_freeStats > 0 && value < statViewData.StatView.MaxValue,
                     value > statViewData.MinValue, value);
+            }
+        }
+
+        private void LoadData()
+        {
+            Dictionary<StatType, int> StatsData = Serializator.Deserializate<Dictionary<StatType, int>>(SavePath);
+            _stats = new List<Stat>();
+            foreach (var stat in StatsData)
+            {
+                _stats.Add(new Stat(stat.Key, stat.Value));
+            }
+        }
+
+        public void ChangeData()
+        {
+            LoadData();
+            Debug.Log("Why it`s doesn`t work " + _statViews.Count); // 0
+            for (int i = 0; i < _statViews.Count; i++)
+            {
+                Debug.Log(i);
+                _statViews[i].ChangeStat(Convert.ToInt32(_stats[i].Value));
             }
         }
     }

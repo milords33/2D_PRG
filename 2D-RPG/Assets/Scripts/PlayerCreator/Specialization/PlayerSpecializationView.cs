@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using PlayerCreator.PanelController;
+
 namespace PlayerCreator.Specialization
 {
     public class PlayerSpecializationView : MonoBehaviour

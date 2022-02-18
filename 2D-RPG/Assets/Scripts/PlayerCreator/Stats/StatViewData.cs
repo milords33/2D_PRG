@@ -18,7 +18,6 @@ namespace PlayerCreator.Stats
             StatView = statView;
             Stat = stat;
             MinValue = minValue;
-
         }
 
     }
