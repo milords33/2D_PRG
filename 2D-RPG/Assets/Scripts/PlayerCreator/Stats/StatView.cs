@@ -1,11 +1,9 @@
 using System;
 using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using GamePlay;
 
 namespace PlayerCreator.Stats
 {
@@ -77,5 +75,9 @@ namespace PlayerCreator.Stats
             SetButtonsState(statValue);
         }
 
+        public void ChangeStatValue(int statValue)
+        {
+            _statValue.text = statValue.ToString();
+        }
     }
 }

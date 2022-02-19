@@ -1,5 +1,4 @@
 using ObjectPooling;
-using System.Collections;
 using System.Collections.Generic;
 using Serialization;
 using UnityEngine;
@@ -28,7 +27,6 @@ namespace PlayerCreator.Specialization
             _skillViews = new List<SkillView>();
             _statViews = new List<StatView>();
             _objectPool = ObjectPool.Instance;
-            Debug.LogError(_objectPool._objectPoolTransform.name);
             ChangeSpecialization();
             _specializationView.LeftArrow.onClick.AddListener(NextSpecialization);
             _specializationView.RightArrow.onClick.AddListener(PreviousSpecialization);
@@ -98,7 +96,6 @@ namespace PlayerCreator.Specialization
             Serializator.Serializate(_currentIndex, SavePathClassNumb);
 
             StatType statType = StatType.Strength;
-
 
             Dictionary<StatType, int> characteristicsValue = new Dictionary<StatType, int>();
             foreach (var element in _statViews)

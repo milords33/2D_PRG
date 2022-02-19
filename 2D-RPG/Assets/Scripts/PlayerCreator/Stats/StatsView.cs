@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using GamePlay;
 
-using PlayerCreator.PanelController;
 using Serialization;
 using System.IO;
 
@@ -25,26 +23,7 @@ namespace PlayerCreator.Stats
         private void Start()
         {
              LoadData();
-            _statViewsData = new List<StatViewData>();
-            _freeStats = 5;
-            _freeStatsText.text = $"Stats left: {_freeStats}";
-            for (int i = 0; i < _stats.Count; i++)
-            {
-                if(i> _statViews.Count)
-                {
-                    break;
-                }
-                _statViews[i].Initialize(_stats[i].StatType.ToString());
-                _statViews[i].OnStatViewDecreaseClicked += DecreaseStatValue;
-                _statViews[i].OnStatViewIncreaseClicked += IncreaseStatValue;
-                _statViews[i].OnStatViewValueClicked += ChangeStatValue;
-                _statViewsData.Add(new StatViewData(_statViews[i], _stats[i], _stats[i].Value));
-            }
-            UpdateStatViews();
-        }
-        private void Update()
-        {
-            Debug.Log(_statViews.Count);
+            
         }
         public void ChangeFreeStats(int value)
         {
@@ -110,12 +89,23 @@ namespace PlayerCreator.Stats
         public void ChangeData()
         {
             LoadData();
-            Debug.Log("Why it`s doesn`t work " + _statViews.Count); // 0
-            for (int i = 0; i < _statViews.Count; i++)
+
+            _statViewsData = new List<StatViewData>();
+            _freeStats = 5;
+            _freeStatsText.text = $"Stats left: {_freeStats}";
+            for (int i = 0; i < _stats.Count; i++)
             {
-                Debug.Log(i);
-                _statViews[i].ChangeStat(Convert.ToInt32(_stats[i].Value));
+                if (i > _statViews.Count)
+                {
+                    break;
+                }
+                _statViews[i].Initialize(_stats[i].StatType.ToString());
+                _statViews[i].OnStatViewDecreaseClicked += DecreaseStatValue;
+                _statViews[i].OnStatViewIncreaseClicked += IncreaseStatValue;
+                _statViews[i].OnStatViewValueClicked += ChangeStatValue;
+                _statViewsData.Add(new StatViewData(_statViews[i], _stats[i], _stats[i].Value));
             }
+            UpdateStatViews();
         }
     }
 }

@@ -33,6 +33,5 @@ namespace PlayerCreator.Stats
         {
             OnClicked?.Invoke(this);
         }
-        
     }
 }

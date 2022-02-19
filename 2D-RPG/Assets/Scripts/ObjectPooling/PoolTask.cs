@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -17,7 +16,7 @@ namespace ObjectPooling
             _container = container;
         }
 
-        public T GetFreeObject<T>(T _prefab) where T : MonoBehaviour, IPoolable
+        public T GetFreeObject<T>(T prefab) where T : MonoBehaviour, IPoolable
         {
             T poolObject = null;
             if (_freeObject.Count > 0)
@@ -27,7 +26,7 @@ namespace ObjectPooling
                 poolObject.GameObject.SetActive(true);
                 _freeObject.Remove(poolObject);
             }
-            poolObject ??= Object.Instantiate(_prefab);
+            poolObject ??= Object.Instantiate(prefab);
             poolObject.OnReturnToPool += ReturnToPool;
 
             return poolObject as T;

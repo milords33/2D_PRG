@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
-using PlayerCreator.PanelController;
 
 namespace PlayerCreator.Specialization
 {
@@ -23,7 +19,6 @@ namespace PlayerCreator.Specialization
         [SerializeField] private StatView _statView;
         [SerializeField] private Transform _statContainer;
 
-
         public Image SpecializationIcon => _specializationIcon;
         public TMP_Text SpecializationName => _specializationName;
         public Button LeftArrow => _leftArrow;
@@ -33,6 +28,5 @@ namespace PlayerCreator.Specialization
         public Transform SkillContainer => _skillContainer;
         public StatView StatView => _statView;
         public Transform StatContainer => _statContainer;
-
     }
 }

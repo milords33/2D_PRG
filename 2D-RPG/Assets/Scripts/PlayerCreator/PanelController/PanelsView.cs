@@ -1,7 +1,6 @@
 using PlayerCreator.Appearance;
 using PlayerCreator.Specialization;
 using PlayerCreator.Stats;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,6 +44,7 @@ namespace PlayerCreator.PanelController
 
                 case Panels.Characteristics:
                     Debug.Log("Characteristics");
+                    _specialization.SaveData();
                     _characteristics.ChangeData();
                     break;
             }

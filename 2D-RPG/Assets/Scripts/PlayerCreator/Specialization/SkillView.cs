@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 using ObjectPooling;
 
 namespace PlayerCreator.Specialization
@@ -26,6 +24,5 @@ namespace PlayerCreator.Specialization
         {
             OnReturnToPool?.Invoke(this);
         }
-
     }
 }

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace PlayerCreator.Specialization
 {
     public enum SpecializationType
@@ -9,5 +7,4 @@ namespace PlayerCreator.Specialization
         Assassin,
         Wanderer,
     }
-
 }

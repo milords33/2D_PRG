@@ -1,1 +1,1 @@
-{"Strength":1,"Agility":3,"Intelligence":2}
+{"Strength":2,"Agility":2,"Intelligence":2}

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -18,16 +17,12 @@ namespace PlayerCreator.Appearance
 
         public void Start()
         {
-            Debug.LogError(ObjectPool.Instance._objectPoolTransform.name);
-            Dictionary<AppearanceFeature, int> appearanceFeatures = new Dictionary<AppearanceFeature, int>();
-
-            appearanceFeatures = Serializator.Deserializate<Dictionary<AppearanceFeature, int>>(SavePath);
+            Dictionary<AppearanceFeature, int> appearanceFeatures = Serializator.Deserializate<Dictionary<AppearanceFeature, int>>(SavePath);
 
             _elementControllers = new List<PlayerAppearanceElementController>();
             foreach (var featureSprite in _storage.AppearanceFeatureSprites)
             {
-                int index = 0;
-                appearanceFeatures.TryGetValue(featureSprite.AppearanceFeature, out index);
+                appearanceFeatures.TryGetValue(featureSprite.AppearanceFeature, out int index);
                 PlayerAppearanceElementView elementView = Instantiate(_appearanceView.PlayerAppearanceElementView, 
                     _appearanceView.ElementsGrid);
 
@@ -37,7 +32,6 @@ namespace PlayerCreator.Appearance
                 _elementControllers.Add(elementController);
             }
         }
-
         // private Destroy
         public void SaveData()
         {
